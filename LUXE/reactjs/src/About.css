@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.Wrapper{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.Wrapper h1{
+  font-family: 'Allura', cursive;
+  font-size: 52px;
+  margin-bottom: 130px;
+  text-align: center;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.team .team_member{
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #353131;  
+  position: relative;
+}
+
+.team .team_member h3{
+  color: #ffd700;
+  padding: 10px;
+  borderRadius: 5px;
+  boxShadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: linear-gradient(to right, #b08b2e, #ffd700);
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member p.role{
+  font-family: 'Ginga';
+  color: #171715;
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50% !important;
+  background: #fff;
+}
+
+.team .team_member .team_img img{
+  border-radius: 50% !important;
+  width: 180px;
+  height: 180px;
+  padding: 5px;
+}

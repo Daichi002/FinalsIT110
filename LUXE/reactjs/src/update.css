@@ -1,0 +1,27 @@
+.upcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 1px solid rgb(235, 231, 231);
+    border-radius: 5px;
+  }
+
+  .updatewrap {
+      text-align: center;
+      margin-top: 100px !important;
+      position: relative;
+      width: 1000px;
+      height: 450px;
+      background: transparent;
+      border: 2px solid #0ef;
+      box-shadow: 0 0 25px rgb(170, 185, 186);
+      overflow: hidden;
+      margin: auto;
+      background-color: #ecf0f3;
+  }
+
+  .fixed-width {
+    width: 100px; /* Adjust the width as needed */
+  }
+  

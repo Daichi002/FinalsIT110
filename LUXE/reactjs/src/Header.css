@@ -1,0 +1,19 @@
+/* Header.css */
+.header-page body,
+.header-page html {
+  height: 100%;
+}
+
+.header-page .header {
+  height: 100%;
+}
+
+.header-page .navbar {
+  height: 100%;
+}
+
+.back {
+  background-color: #ffa500 !important;
+  opacity: 0.5 !important;
+}
+
