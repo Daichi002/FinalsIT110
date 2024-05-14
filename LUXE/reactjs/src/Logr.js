@@ -35,7 +35,7 @@ function Logr(){
                 notification.style.backgroundColor = '#f44336';
                 notification.style.color = '#fff';
             }else if (type === 'info') {
-              notification.style.backgroundColor = '#ecf0f1';
+              notification.style.backgroundColor = '#f2eeec';
               notification.style.color = '#3498db';
           }
         
@@ -183,7 +183,7 @@ function Logr(){
                     });
             
                     if (!response.ok) {                       
-                      showAlert("Credentials must be unique", "info");
+                      showAlert("Username must be unique", "info");
                         throw new Error(`HTTP error! Status: ${response.status}`);
                     }
             

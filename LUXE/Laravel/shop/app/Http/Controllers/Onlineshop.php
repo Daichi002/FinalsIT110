@@ -16,31 +16,36 @@ use Illuminate\Support\Facades\Log;
 
 class Onlineshop extends Controller
 {
-    public function create(Request $request)
-{
-    $email = $request->input('email');
-    $userName = $request->input('username');
-    $password = $request->input('password');
+                public function create(Request $request)
+            {
+                $email = $request->input('email');
+                $userName = $request->input('username');
+                $password = $request->input('password');
 
-    // Use the Hash facade to hash the password
-    $hashedPassword = Hash::make($password);
+                $existingAccount = Account::where('user_name', $userName)->first();
+                if ($existingAccount) {
+                    return response()->json(['error' => 'Username already exists'], 400);
+                }
 
-    // Insert data into the 'accounts' table using Eloquent
-    $account = new Account;  
-    $account->email = $email;
-    $account->user_name = $userName;
-    $account->password = $hashedPassword;
+                // Use the Hash facade to hash the password
+                $hashedPassword = Hash::make($password);
 
-    try {
-        // Attempt to save the account
-        $account->save();
-    } catch (\Exception $e) {
-        // Handle the exception (e.g., log it) and return an error response
-        return response()->json(['error' => 'Account creation failed'], 500);
-    }
+                // Insert data into the 'accounts' table using Eloquent
+                $account = new Account;  
+                $account->email = $email;
+                $account->user_name = $userName;
+                $account->password = $hashedPassword;
 
-    // Registration was successful
-    return response()->json(['message' => 'Account has been created'], 200);
+                try {
+                    // Attempt to save the account
+                    $account->save();
+                } catch (\Exception $e) {
+                    // Handle the exception (e.g., log it) and return an error response
+                    return response()->json(['error' => 'Account creation failed'], 500);
+                }
+
+                // Registration was successful
+                return response()->json(['message' => 'Account has been created'], 200);
 }
 
 

@@ -756,19 +756,19 @@ function Home() {
                           <Modal.Body className="grid-example">
                             <Container>                           
                             <Row>
-                                      {receiptResponse && receiptResponse.length > 0 && (
-                                        receiptResponse.map((item, index) => (
-                                          <Col key={index} xs={12} md={15}>
-                                            <Alert variant="success">
-                                              <Row>Model: {item.model}</Row>
-                                              <Row>User: {item.username}</Row>
-                                              <Row>Buyer: {item.firstname}</Row>
-                                              <Row>Transaction Date: {item.created_at}</Row>
-                                            </Alert>
-                                          </Col>
-                                        ))
-                                      )}
-                                    </Row>
+                                  {receiptResponse && receiptResponse.length > 0 && 
+                                    receiptResponse.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).map((item, index) => (
+                                      <Col key={index} xs={12} md={15}>
+                                        <Alert variant="success">
+                                          <Row>Model: {item.model}</Row>
+                                          <Row>User: {item.username}</Row>
+                                          <Row>Buyer: {item.firstname}</Row>
+                                          <Row>Transaction Date: {item.receipt_create}</Row>
+                                        </Alert>
+                                      </Col>
+                                    ))
+                                  }
+                                </Row>
                             </Container>
                           </Modal.Body>
                           <Modal.Footer>
